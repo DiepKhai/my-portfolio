@@ -18,6 +18,23 @@ class Footer extends Component {
       <footer>
         <div className="col-md-12">
           <div className="social-links">{networks}</div>
+          
+          {this.props.sharedBasicInfo && (this.props.sharedBasicInfo.phone || this.props.sharedBasicInfo.email) && (
+            <div className="text-center mt-3">
+              <small>
+                {this.props.sharedBasicInfo.phone && (
+                  <span className="mx-3">
+                    <i className="fas fa-phone"></i> {this.props.sharedBasicInfo.phone}
+                  </span>
+                )}
+                {this.props.sharedBasicInfo.email && (
+                  <span className="mx-3">
+                    <i className="fas fa-envelope"></i> {this.props.sharedBasicInfo.email}
+                  </span>
+                )}
+              </small>
+            </div>
+          )}
 
           <div className="copyright py-4 text-center">
             <div className="container">
